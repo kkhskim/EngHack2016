@@ -8,7 +8,6 @@ var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
-var browserSync = require('browser-sync').create();
 
 
 gulp.task('angular', function() {
@@ -39,19 +38,6 @@ gulp.task('vendor', function() {
 gulp.task('watch', function() {
   gulp.watch('app/views/**/*.html', ['templates']);
   gulp.watch('app/**/*.js', ['angular']);
-});
-
-gulp.task('serve', function() {
-  browserSync.init({
-    notify: false,
-    port: 9000,
-    server: {
-      baseDir: "./",
-      routes: {
-        '/bower_components': 'bower_components'
-      }
-    }
-  });
 });
 
 gulp.task('build', ['angular', 'vendor', 'templates']);
