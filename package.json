@@ -38,7 +38,10 @@
     "vinyl-buffer": "^1.0.0",
     "yargs": "^4.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1"
+  },
   "engines": {
     "node": "6.1.0"
   }
